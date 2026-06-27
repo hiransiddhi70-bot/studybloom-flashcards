@@ -1,0 +1,58 @@
+body {
+  font-family: 'Quicksand', sans-serif;
+}
+
+.title-font {
+  font-family: 'Comic Neue', cursive;
+}
+
+/* Flip Card Animation 📚 */
+.flip-card {
+  perspective: 1000px;
+}
+
+.flip-inner {
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.flip-card.flipped.flip-inner {
+  transform: rotateY(180deg);
+}
+
+.front,.back {
+  backface-visibility: hidden;
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+/* Floating Bubbles 🎀 */
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  animation: float 8s infinite ease-in-out;
+  opacity: 0.3;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  50% {
+    transform: translateY(-20px) translateX(10px);
+  }
+}
+
+/* Smooth transitions */
+* {
+  transition: background-color 0.3s, border-color 0.3s;
+}
