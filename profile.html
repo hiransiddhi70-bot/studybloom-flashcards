@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile - StudyBloom AI</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gradient-to-br from-pink-100 via-purple-100 to-sky-100 dark:from-gray-900 dark:via-purple-900 dark:to-slate-900 min-h-screen">
+  <div id="bubbles" class="fixed inset-0 overflow-hidden pointer-events-none"></div>
+
+  <div class="relative z-10 max-w-4xl mx-auto p-4">
+    <nav class="flex gap-4 mb-6 text-sm font-semibold">
+      <a href="dashboard.html" class="text-gray-600 hover:text-purple-600">Dashboard 📚</a>
+      <a href="profile.html" class="text-purple-600 border-b-2 border-purple-600">Profile 👤</a>
+      <a href="about.html" class="text-gray-600 hover:text-purple-600">About 🌸</a>
+      <button id="logoutBtn" class="ml-auto text-red-500">Logout</button>
+    </nav>
+
+    <div class="bg-white/60 dark:bg-black/40 backdrop-blur rounded-3xl p-6 shadow-lg">
+      <div class="text-center mb-6">
+        <div class="text-6xl mb-2">🧸</div>
+        <h2 class="title-font text-3xl text-purple-600 dark:text-pink-300" id="profileName">Pookie</h2>
+        <p class="text-gray-600 dark:text-gray-400">Study Streak: <span id="streak">0</span> days 🔥</p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+        <div class="bg-pink-100 dark:bg-pink-900/30 p-4 rounded-2xl">
+          <div class="text-2xl font-bold text-pink-600" id="totalCards">0</div>
+          <div class="text-sm">Total Cards</div>
+        </div>
+        <div class="bg-purple-100 dark:bg-purple-900/30 p-4 rounded-2xl">
+          <div class="text-2xl font-bold text-purple-600" id="reviewedCards">0</div>
+          <div class="text-sm">Reviewed</div>
+        </div>
+        <div class="bg-sky-100 dark:bg-sky-900/30 p-4 rounded-2xl">
+          <div class="text-2xl font-bold text-sky-600" id="accuracy">0%</div>
+          <div class="text-sm">Accuracy</div>
+        </div>
+        <div class="bg-yellow-100 dark:bg-yellow-900/30 p-4 rounded-2xl">
+          <div class="text-2xl font-bold text-yellow-600">🏆</div>
+          <div class="text-sm">Rank: Bloom</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="auth.js"></script>
+</body>
+</html>
