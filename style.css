@@ -1,3 +1,4 @@
+/* ===== BASE STYLES 🌸 ===== */
 body {
   font-family: 'Quicksand', sans-serif;
 }
@@ -6,9 +7,10 @@ body {
   font-family: 'Comic Neue', cursive;
 }
 
-/* Flip Card Animation 📚 */
+/* ===== FLIP CARD ANIMATION 📚 ===== */
 .flip-card {
   perspective: 1000px;
+  height: 12rem;
 }
 
 .flip-inner {
@@ -29,30 +31,217 @@ body {
   inset: 0;
   width: 100%;
   height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .back {
   transform: rotateY(180deg);
 }
 
-/* Floating Bubbles 🎀 */
+/* ===== FLOATING BUBBLES 🎀 ===== */
 .bubble {
   position: absolute;
   border-radius: 50%;
   animation: float 8s infinite ease-in-out;
   opacity: 0.3;
+  pointer-events: none;
 }
 
 @keyframes float {
   0%, 100% {
-    transform: translateY(0px) translateX(0px);
+    transform: translateY(0px) translateX(0px) rotate(0deg);
   }
-  50% {
-    transform: translateY(-20px) translateX(10px);
+  33% {
+    transform: translateY(-20px) translateX(10px) rotate(120deg);
+  }
+  66% {
+    transform: translateY(-10px) translateX(-10px) rotate(240deg);
   }
 }
 
-/* Smooth transitions */
+/* ===== POMODORO TIMER 🍅 ===== */
+.pomodoro-timer {
+  font-family: 'Comic Neue', cursive;
+  font-size: 3.5rem;
+  text-align: center;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.dark.pomodoro-timer {
+  text-shadow: 2px 2px 4px rgba(255,255,255,0.1);
+}
+
+/* ===== LEADERBOARD 🏆 ===== */
+.leaderboard-item {
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.leaderboard-item:hover {
+  transform: scale(1.02) translateX(5px);
+  border-color: rgb(192, 132, 252);
+  box-shadow: 0 4px 15px rgba(192, 132, 252, 0.3);
+}
+
+/* ===== CATEGORY BADGE 📁 ===== */
+.category-badge {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  font-size: 0.7rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 1rem;
+  font-weight: 600;
+}
+
+.category-General { background: #fce7f3; color: #be185d; }
+.category-Physics { background: #dbeafe; color: #1e40af; }
+.category-Math { background: #dcfce7; color: #166534; }
+.category-Biology { background: #fef3c7; color: #92400e; }
+.category-Chemistry { background: #e9d5ff; color: #6b21a8; }
+
+.dark.category-General { background: #831843; color: #fce7f3; }
+.dark.category-Physics { background: #1e3a8a; color: #dbeafe; }
+.dark.category-Math { background: #14532d; color: #dcfce7; }
+.dark.category-Biology { background: #78350f; color: #fef3c7; }
+.dark.category-Chemistry { background: #581c87; color: #e9d5ff; }
+
+/* ===== BUTTON HOVER EFFECTS ✨ ===== */
+button {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+button:active {
+  transform: translateY(0px);
+}
+
+/* ===== INPUT FOCUS GLOW 💖 ===== */
+input:focus, textarea:focus, select:focus {
+  box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.3);
+  border-color: rgb(236, 72, 153);
+}
+
+.dark input:focus,.dark textarea:focus,.dark select:focus {
+  box-shadow: 0 0 0 3px rgba(244, 114, 182, 0.4);
+}
+
+/* ===== SCROLLBAR CUTE 🌸 ===== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(252, 231, 243, 0.5);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(244, 114, 182);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(236, 72, 153);
+}
+
+.dark::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.3);
+}
+
+.dark::-webkit-scrollbar-thumb {
+  background: rgb(168, 85, 247);
+}
+
+/* ===== PROGRESS BAR ANIMATION 📊 ===== */
+#progress {
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ===== MODAL ANIMATIONS 🎀 ===== */
+#modal,.fixed {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { 
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to { 
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ===== CARD HOVER LIFT 📚 ===== */
+.flip-card:hover.flip-inner {
+  box-shadow: 0 10px 30px rgba(236, 72, 153, 0.3);
+}
+
+/* ===== RESPONSIVE TEXT 📱 ===== */
+@media (max-width: 640px) {
+  .title-font {
+    font-size: 2rem;
+  }
+  
+  .pomodoro-timer {
+    font-size: 2.5rem;
+  }
+  
+  nav {
+    flex-wrap: wrap;
+  }
+}
+
+/* ===== SMOOTH TRANSITIONS ===== */
 * {
-  transition: background-color 0.3s, border-color 0.3s;
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+
+/* ===== LOADING SKELETON 💀 ===== */
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ===== CONFETTI CANVAS 🎉 ===== */
+canvas {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ===== EMPTY STATE ANIMATION 🧸 ===== */
+#empty {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
